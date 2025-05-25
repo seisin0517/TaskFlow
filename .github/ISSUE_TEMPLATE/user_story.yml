@@ -27,7 +27,7 @@ body:
     id: user-story
     attributes:
       label: 📝 사용자 스토리
-      description: "As a [사용자], I want [기능], So that [목적]\"형식으로 작성해주세요.
+      description: '"As a [사용자], I want [기능], So that [목적]"식으로 작성해주세요.'
       placeholder: |
         As a 새로운 사용자
         I want 이메일과 비밀번호로 회원가입하고 싶어요
