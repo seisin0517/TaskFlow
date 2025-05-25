@@ -1,31 +1,91 @@
----
 name: 🐛 버그 리포트
-about: 버그를 발견했을 때 사용하는 템플릿
-title: '[BUG] '
-labels: ['bug', 'triage']
-assignees: ''
----
+description: 버그를 발견했을 때 사용하는 템플릿
+title: "[BUG] "
+labels: ["bug", "triage"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        버그 리포트를 작성해주셔서 감사해요! 최대한 자세히 적어주시면 빠르게 해결할 수 있어요.
 
-## 🐛 버그 설명
-버그에 대한 명확하고 간결한 설명을 작성해주세요.
+  - type: textarea
+    id: bug-description
+    attributes:
+      label: 🐛 버그 설명
+      description: 어떤 버그가 발생했는지 명확하고 간결하게 설명해주세요.
+      placeholder: 예) 로그인 버튼을 클릭했는데 아무 반응이 없어요.
+    validations:
+      required: true
 
-## 🔄 재현 단계
-버그를 재현하기 위한 단계:
-1. '...' 페이지로 이동
-2. '...' 버튼 클릭
-3. '...' 입력
-4. 오류 발생 확인
+  - type: textarea
+    id: reproduction-steps
+    attributes:
+      label: 🔄 재현 단계
+      description: 버그를 재현하기 위한 단계를 순서대로 적어주세요.
+      placeholder: |
+        1. '로그인' 페이지로 이동
+        2. 이메일과 비밀번호 입력
+        3. '로그인' 버튼 클릭
+        4. 오류 발생 확인
+    validations:
+      required: true
 
-## 🎯 예상 동작
-정상적으로 작동했을 때 예상되는 동작을 설명해주세요.
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 🎯 예상 동작
+      description: 정상적으로 작동했을 때 예상되는 동작을 설명해주세요.
+      placeholder: 로그인이 성공하고 메인 페이지로 이동해야 해요.
+    validations:
+      required: true
 
-## 📷 스크린샷
-가능하다면 스크린샷을 첨부해주세요.
+  - type: textarea
+    id: screenshots
+    attributes:
+      label: 📷 스크린샷
+      description: 가능하다면 스크린샷을 첨부해주세요.
+      placeholder: 이미지를 드래그하거나 붙여넣기 해주세요.
 
-## 🖥️ 환경 정보
-- OS: [예: Windows 11]
-- 브라우저: [예: Chrome 120]
-- 버전: [예: v1.2.3]
+  - type: dropdown
+    id: browsers
+    attributes:
+      label: 🌐 브라우저
+      description: 어떤 브라우저에서 발생했나요?
+      options:
+        - Chrome
+        - Firefox
+        - Safari
+        - Edge
+        - 기타
+    validations:
+      required: true
 
-## 📝 추가 정보
-버그와 관련된 추가 정보가 있다면 작성해주세요.
+  - type: dropdown
+    id: os
+    attributes:
+      label: 🖥️ 운영체제
+      description: 어떤 운영체제를 사용하고 계신가요?
+      options:
+        - Windows 11
+        - Windows 10
+        - macOS
+        - Linux
+        - iOS
+        - Android
+    validations:
+      required: true
+
+  - type: input
+    id: version
+    attributes:
+      label: 📱 앱 버전
+      description: 사용 중인 앱 버전을 알려주세요.
+      placeholder: 예) v1.2.3
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: 📝 추가 정보
+      description: 버그와 관련된 추가 정보가 있다면 자유롭게 작성해주세요.
+      placeholder: 다른 환경에서도 테스트해봤는지, 언제부터 발생했는지 등

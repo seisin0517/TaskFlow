@@ -1,29 +1,78 @@
----
 name: ✨ 기능 요청
-about: 새로운 기능을 제안할 때 사용하는 템플릿
-title: '[FEATURE] '
-labels: ['enhancement', 'feature']
-assignees: ''
----
+description: 새로운 기능을 제안할 때 사용하는 템플릿
+title: "[FEATURE] "
+labels: ["enhancement", "feature"]
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        새로운 기능 제안해주셔서 감사해요! 구체적으로 작성해주시면 더 좋은 기능을 만들 수 있어요.
 
-## 🎯 기능 설명
-어떤 기능을 원하는지 명확하게 설명해주세요.
+  - type: textarea
+    id: feature-description
+    attributes:
+      label: 🎯 기능 설명
+      description: 어떤 기능을 원하는지 명확하게 설명해주세요.
+      placeholder: 예) 할 일에 마감일을 설정할 수 있는 기능이 있으면 좋겠어요.
+    validations:
+      required: true
 
-## 💡 동기
-이 기능이 왜 필요한지, 어떤 문제를 해결하는지 설명해주세요.
+  - type: textarea
+    id: motivation
+    attributes:
+      label: 💡 동기
+      description: 이 기능이 왜 필요한지, 어떤 문제를 해결하는지 설명해주세요.
+      placeholder: 현재 마감일을 따로 메모해야 해서 불편해요. 앱에서 직접 관리할 수 있으면 더 효율적일 것 같아요.
+    validations:
+      required: true
 
-## 📋 상세 요구사항
-- [ ] 요구사항 1
-- [ ] 요구사항 2
-- [ ] 요구사항 3
+  - type: checkboxes
+    id: requirements
+    attributes:
+      label: 📋 상세 요구사항
+      description: 이 기능에 포함되었으면 하는 세부 기능들을 선택해주세요.
+      options:
+        - label: 날짜 선택 기능
+        - label: 시간 설정 기능
+        - label: 알림 기능
+        - label: 반복 설정
+        - label: 우선순위 표시
 
-## 🎨 UI/UX 제안
-가능하다면 UI/UX에 대한 아이디어나 스케치를 공유해주세요.
+  - type: textarea
+    id: ui-suggestions
+    attributes:
+      label: 🎨 UI/UX 제안
+      description: UI/UX에 대한 아이디어나 참고할 만한 앱이 있다면 알려주세요.
+      placeholder: 구글 캘린더처럼 날짜를 클릭해서 선택하는 방식이면 좋겠어요.
 
-## 🔗 참고 자료
-관련된 링크나 참고 자료가 있다면 공유해주세요.
+  - type: textarea
+    id: references
+    attributes:
+      label: 🔗 참고 자료
+      description: 관련된 링크나 참고 자료가 있다면 공유해주세요.
+      placeholder: 비슷한 기능을 가진 다른 앱의 링크나 관련 문서
 
-## 📊 우선순위
-- [ ] 높음 (즉시 필요)
-- [ ] 보통 (다음 스프린트)
-- [ ] 낮음 (나중에 고려)
+  - type: dropdown
+    id: priority
+    attributes:
+      label: 📊 우선순위
+      description: 이 기능이 얼마나 급한지 알려주세요.
+      options:
+        - 높음 (즉시 필요해요)
+        - 보통 (다음 업데이트에 포함되면 좋겠어요)
+        - 낮음 (나중에 고려해주세요)
+      default: 1
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: contribution
+    attributes:
+      label: 🤝 기여 의향
+      description: 이 기능 개발에 참여하고 싶으신가요?
+      options:
+        - label: 기능 설계에 참여하고 싶어요
+        - label: 테스트에 참여하고 싶어요
+        - label: 문서 작성을 도와드릴 수 있어요
+        - label: 코드 리뷰에 참여하고 싶어요
